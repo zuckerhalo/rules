@@ -1,0 +1,6 @@
+payload:
+  # Linux only rule-set
+  - PROCESS-NAME,spotify
+  - PROCESS-NAME,spotifycli
+  - DOMAIN-SUFFIX,spotify.com
+  - DOMAIN-SUFFIX,mtalk.google.com
