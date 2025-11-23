@@ -1,0 +1,25 @@
+payload:
+  # Linux only rule-set
+  - PROCESS-NAME,wineserver
+  - PROCESS-NAME,steam
+  - PROCESS-NAME,steamwebhelper
+  - DOMAIN-SUFFIX,steamcontent.com
+  # -----------------------------------------------------
+  # The rule below might be needed to properly install
+  # Microsoft's dependencies, so that Steam games on Linux
+  # machines can be run. Akamai CDN is also used by some games.
+  #
+  # But, please note that Spotify and lots of other apps
+  # are also dependent on it.
+  # -----------------------------------------------------
+  # If it so happens that it doesn't work,
+  # e.g. "Running install Script(*)" takes forever.
+  # You can disable that specific rule by placing
+  # "akamaized.net" rule above the "games" rule-set.
+  # -----------------------------------------------------
+  - DOMAIN-SUFFIX,akamaized.net
+  - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN-SUFFIX,steamstatic.com
+  - DOMAIN-SUFFIX,steamcommunity.com
+  - DOMAIN-SUFFIX,steampowered.com
+  - DOMAIN-SUFFIX,steam-chat.com
