@@ -17,12 +17,14 @@ payload:
   # If it so happens that it doesn't work,
   # e.g. "Running install Script(*)" takes forever.
   # You can disable that specific rule by placing
-  # "akamaized.net" rule above the "games" rule-set.
+  # Akamaid CDN rule above the "games" rule-set.
   # -----------------------------------------------------
   - DOMAIN-SUFFIX,akamaized.net
+  - DOMAIN-SUFFIX,akamaihd.net
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,steamstatic.com
   - DOMAIN-SUFFIX,steamcommunity.com
   - DOMAIN-SUFFIX,steampowered.com
   - DOMAIN-SUFFIX,steam-chat.com
   - DOMAIN-SUFFIX,steamusercontent.com
+  - DOMAIN-SUFFIX,steamgames.com
