@@ -3,4 +3,10 @@ payload:
   - PROCESS-NAME,spotify
   - PROCESS-NAME,spotifycli
   - DOMAIN-SUFFIX,spotify.com
+  - DOMAIN-SUFFIX,spotifycdn.com
+  - DOMAIN-SUFFIX,tospotify.com
+  - DOMAIN-SUFFIX,spotilocal.com
+  - DOMAIN-SUFFIX,spotifycdn.net
+  - DOMAIN-SUFFIX,scdn.co
+  - DOMAIN-SUFFIX,pscdn.co
   - DOMAIN-SUFFIX,mtalk.google.com
