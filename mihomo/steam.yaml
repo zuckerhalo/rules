@@ -1,8 +1,10 @@
 payload:
   # Linux only rule-set
   - PROCESS-NAME,wineserver
+  - PROCESS-NAME,wine64-preloader
   - PROCESS-NAME,steam
   - PROCESS-NAME,steamwebhelper
+  - PROCESS-NAME,steamerrorreporter
   - DOMAIN-SUFFIX,steamcontent.com
   # -----------------------------------------------------
   # The rule below might be needed to properly install
