@@ -1,0 +1,4 @@
+payload:
+  # Linux only rule-set
+  - PROCESS-NAME,Telegram
+  - PROCESS-NAME,telegram
