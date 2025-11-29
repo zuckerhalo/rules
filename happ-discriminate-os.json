@@ -1,0 +1,121 @@
+// add it to your other rules at the top, but after the browser rule.
+{
+  "name": "Happ Android",
+  "description": "Serve custom JSON for Android",
+  "enabled": true,
+  "operator": "AND",
+  "conditions": [
+    {
+      "caseSensitive": false,
+      "headerName": "user-agent",
+      "operator": "CONTAINS",
+      "value": "happ"
+    },
+    {
+      "caseSensitive": false,
+      "headerName": "x-device-os",
+      "operator": "CONTAINS",
+      "value": "android"
+    }
+  ],
+  "responseType": "XRAY_JSON",
+  "responseModifications": {
+    "subscriptionTemplate": "Happ Android"
+  }
+},
+{
+  "name": "Happ iOS",
+  "description": "Serve custom JSON for iOS",
+  "enabled": true,
+  "operator": "AND",
+  "conditions": [
+    {
+      "caseSensitive": false,
+      "headerName": "user-agent",
+      "operator": "CONTAINS",
+      "value": "happ"
+    },
+    {
+      "caseSensitive": false,
+      "headerName": "x-device-os",
+      "operator": "CONTAINS",
+      "value": "ios"
+    }
+  ],
+  "responseType": "XRAY_JSON",
+  "responseModifications": {
+    "subscriptionTemplate": "Happ iOS"
+  }
+},
+{
+  "name": "Happ Windows",
+  "description": "Serve custom JSON for Windows",
+  "enabled": true,
+  "operator": "AND",
+  "conditions": [
+    {
+      "caseSensitive": false,
+      "headerName": "user-agent",
+      "operator": "CONTAINS",
+      "value": "happ"
+    },
+    {
+      "caseSensitive": false,
+      "headerName": "x-device-os",
+      "operator": "CONTAINS",
+      "value": "windows"
+    }
+  ],
+  "responseType": "XRAY_JSON",
+  "responseModifications": {
+    "subscriptionTemplate": "Happ Windows"
+  }
+},
+{
+  "name": "Happ macOS",
+  "description": "Serve custom JSON for macOS",
+  "enabled": true,
+  "operator": "AND",
+  "conditions": [
+    {
+      "caseSensitive": false,
+      "headerName": "user-agent",
+      "operator": "CONTAINS",
+      "value": "happ"
+    },
+    {
+      "caseSensitive": false,
+      "headerName": "x-device-os",
+      "operator": "CONTAINS",
+      "value": "macos"
+    }
+  ],
+  "responseType": "XRAY_JSON",
+  "responseModifications": {
+    "subscriptionTemplate": "Happ macOS"
+  }
+},
+{
+  "name": "Happ Linux",
+  "description": "Serve custom JSON for Linux",
+  "enabled": true,
+  "operator": "AND",
+  "conditions": [
+    {
+      "caseSensitive": false,
+      "headerName": "user-agent",
+      "operator": "CONTAINS",
+      "value": "happ"
+    },
+    {
+      "caseSensitive": false,
+      "headerName": "x-device-os",
+      "operator": "CONTAINS",
+      "value": "linux"
+    }
+  ],
+  "responseType": "XRAY_JSON",
+  "responseModifications": {
+    "subscriptionTemplate": "Happ Linux"
+  }
+}
