@@ -17,7 +17,7 @@ payload:
   # If it so happens that it doesn't work,
   # e.g. "Running install Script(*)" takes forever.
   # You can disable that specific rule by placing
-  # Akamaid CDN rule above the "games" rule-set.
+  # it above the "games" rule-set.
   # -----------------------------------------------------
   - DOMAIN-SUFFIX,akamaized.net
   - DOMAIN-SUFFIX,akamaihd.net
@@ -28,3 +28,36 @@ payload:
   - DOMAIN-SUFFIX,steam-chat.com
   - DOMAIN-SUFFIX,steamusercontent.com
   - DOMAIN-SUFFIX,steamgames.com
+  # Additional domains
+  - DOMAIN-SUFFIX,playartifact.com
+  - DOMAIN-SUFFIX,s.team
+  - DOMAIN-SUFFIX,steam.tv
+  - DOMAIN-SUFFIX,steam-api.com
+  - DOMAIN-SUFFIX,steamdeck.com
+  - DOMAIN-SUFFIX,underlords.com
+  - DOMAIN-SUFFIX,valvesoftware.com
+  - DOMAIN-SUFFIX,steam-dns.top.comcast.net
+  - DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net.edgesuite.net
+  - DOMAIN-SUFFIX,apac.qtlglb.com
+  - DOMAIN-SUFFIX,eca.qtlglb.com
+  - DOMAIN-SUFFIX,naeu.qtlglb.com
+  - DOMAIN-SUFFIX,ru.qtlglb.com
+  - DOMAIN-SUFFIX,a4e8s8k3.map2.ssl.hwcdn.net
+  - DOMAIN-SUFFIX,f3b7q2p3.ssl.hwcdn.net
+  - DOMAIN-SUFFIX,cdn.on.net
+  - DOMAIN-SUFFIX,cdn.orcon.net.nz
+  - DOMAIN-SUFFIX,cdn.slingshot.co.nz
+  - DOMAIN-SUFFIX,cdn.webra.ru
+  - DOMAIN-SUFFIX,steamcloudsweden.blob.core.windows.net
+  - DOMAIN-SUFFIX,wmsj.cn
+  - DOMAIN-SUFFIX,wmsjsteam.com
+  - DOMAIN-SUFFIX,queniuqe.com
+  - DOMAIN-SUFFIX,clngaa.com
+  - DOMAIN-SUFFIX,bscstorage.net
+  - DOMAIN-SUFFIX,eccdnx.com
+  - DOMAIN-SUFFIX,pinyuncloud.com
+  - DOMAIN-SUFFIX,8686c.com
+  - DOMAIN-SUFFIX,lv.queniujq.cn
+  - DOMAIN-SUFFIX,xz.pphimalayanrt.com
+  - DOMAIN-SUFFIX,steamchina.com
+  - DOMAIN-SUFFIX,manlaxy.com
