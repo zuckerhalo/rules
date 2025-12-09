@@ -28,6 +28,8 @@ payload:
   - DOMAIN-SUFFIX,steam-chat.com
   - DOMAIN-SUFFIX,steamusercontent.com
   - DOMAIN-SUFFIX,steamgames.com
+  # valve.net is also used for hosting servers for valve's games
+  - DOMAIN-SUFFIX,valve.net
   # Additional domains
   - DOMAIN-SUFFIX,playartifact.com
   - DOMAIN-SUFFIX,s.team
