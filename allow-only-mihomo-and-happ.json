@@ -43,7 +43,10 @@
           "caseSensitive": false
         }
       ],
-      "responseType": "MIHOMO"
+      "responseType": "MIHOMO",
+      "responseModifications": {
+        "subscriptionTemplate": "mihomosh-entry"
+      }
     },
     {
       "name": "Xray Checker",
