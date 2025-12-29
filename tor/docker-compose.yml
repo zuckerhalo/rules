@@ -1,0 +1,40 @@
+services:
+
+  rw-node:
+    image: remnawave/node:latest
+    container_name: rw-node
+    hostname: rw-node
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - NODE_PORT=example
+      - SECRET_KEY=example
+    volumes:
+      - /dev/shm:/dev/shm:rw
+
+  rw-nginx:
+    image: nginx:latest
+    container_name: rw-nginx
+    hostname: rw-nginx
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /example/certificates/fullchain.pem:/etc/nginx/ssl/example.org/fullchain.pem:ro
+      - /example/certificates/privkey.pem:/etc/nginx/ssl/example.org/privkey.pem:ro
+      - /dev/shm:/dev/shm:rw
+      - /var/www/html:/var/www/html:ro
+    command: sh -c 'rm -f /dev/shm/nginx.sock && nginx -g "daemon off;"'
+    network_mode: host
+    depends_on:
+      - rw-node
+
+  rw-tor:
+    image: dperson/torproxy
+    container_name: rw-tor
+    restart: unless-stopped
+    depends_on:
+      - rw-nginx
+    ports:
+        - "127.0.0.1:9050:9050" // unless you want to expose your vps as a tor relay, keep it to localhost only
+        - "127.0.0.1:9040:9040"
+        - "127.0.0.1:9030:9030"
