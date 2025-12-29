@@ -29,7 +29,7 @@ services:
       - rw-node
 
   rw-tor:
-    image: dperson/torproxy
+    image: dperson/torproxy:latest
     container_name: rw-tor
     restart: unless-stopped
     depends_on:
