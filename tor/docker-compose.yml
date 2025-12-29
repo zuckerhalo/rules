@@ -35,6 +35,6 @@ services:
     depends_on:
       - rw-nginx
     ports:
-        - "127.0.0.1:9050:9050" // unless you want to expose your vps as a tor relay, keep it to localhost only
-        - "127.0.0.1:9040:9040"
-        - "127.0.0.1:9030:9030"
+      - "127.0.0.1:9050:9050" // unless you want to expose your vps as a tor relay, keep it to localhost only
+      - "127.0.0.1:9040:9040"
+      - "127.0.0.1:9030:9030"
