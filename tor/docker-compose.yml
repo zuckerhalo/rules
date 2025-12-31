@@ -1,5 +1,4 @@
 services:
-
   rw-node:
     image: remnawave/node:latest
     container_name: rw-node
@@ -17,6 +16,7 @@ services:
     container_name: rw-nginx
     hostname: rw-nginx
     restart: unless-stopped
+    network_mode: host
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - /example/certificates/fullchain.pem:/etc/nginx/ssl/example.org/fullchain.pem:ro
@@ -24,17 +24,10 @@ services:
       - /dev/shm:/dev/shm:rw
       - /var/www/html:/var/www/html:ro
     command: sh -c 'rm -f /dev/shm/nginx.sock && nginx -g "daemon off;"'
-    network_mode: host
-    depends_on:
-      - rw-node
 
   rw-tor:
-    image: dperson/torproxy:latest
-    container_name: rw-tor
-    restart: unless-stopped
-    depends_on:
-      - rw-nginx
+    image: leplusorg/tor:latest
     ports:
-      - "127.0.0.1:9050:9050" // unless you want to expose your vps as a tor relay, keep it to localhost only
-      - "127.0.0.1:9040:9040"
-      - "127.0.0.1:9030:9030"
+      - "127.0.0.1:9050:9050"
+    environment:
+      - SOCKS_HOSTNAME=0.0.0.0
