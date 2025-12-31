@@ -1,0 +1,108 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ]
+  },
+  "inbounds": [
+    {
+      "tag": "vlessRoute_IN",
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      },
+      "streamSettings": {
+        "network": "raw",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "xver": 1,
+          "target": "/dev/shm/nginx.sock",
+          "spiderX": "",
+          "shortIds": [
+            ""
+          ],
+          "privateKey": "example_private_key_here",
+          "serverNames": [
+            "example.org"
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "DIRECT",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "BLOCK",
+      "protocol": "blackhole"
+    },
+    {
+      "tag": "TOR_OUT",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "port": 9050,
+            "address": "127.0.0.1"
+          }
+        ]
+      }
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "inboundTag": [
+          "vlessRoute_IN"
+        ],
+        "vlessRoute": 1,
+        "outboundTag": "DIRECT"
+      },
+      {
+        "inboundTag": [
+          "vlessRoute_IN"
+        ],
+        "vlessRoute": 2,
+        "outboundTag": "TOR_OUT"
+      },
+      {
+        "ip": [
+          "geoip:private"
+        ],
+        "type": "field",
+        "outboundTag": "BLOCK"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:private"
+        ],
+        "outboundTag": "BLOCK"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "BLOCK"
+      }
+    ]
+  }
+}
