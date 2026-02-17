@@ -1,0 +1,8 @@
+payload:
+  - PROCESS-NAME,dnf?
+  - PROCESS-NAME,flatpak-system-helper
+  - PROCESS-NAME,packagekit-dnf-refresh-repo
+  - PROCESS-NAME,plasma-discover
+  - PROCESS-NAME,DiscoverNotifier
+  - PROCESS-NAME,flatpak-oci-authenticator
+  - PROCESS-NAME,snapd
