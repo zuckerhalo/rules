@@ -6,3 +6,4 @@ payload:
   - PROCESS-NAME,DiscoverNotifier
   - PROCESS-NAME,flatpak-oci-authenticator
   - PROCESS-NAME,snapd
+  - PROCESS-NAME,pacman
